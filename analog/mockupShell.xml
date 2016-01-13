@@ -1,0 +1,19 @@
+<program xmlns="http://www.kinoma.com/kpr/1">
+	<require path="mockup/shell" id="MOCKUP"/>
+	<script><![CDATA[
+		shell.behavior = new MOCKUP.ShellBehavior(shell, {
+			applications: [
+				{
+					id: "analog.intlweb.com",
+					program: "./src/main",
+					title: "Analog",
+				},
+			],
+			devices: [
+				"./devices/",
+			],
+			preferences: "analog.json",
+		});
+		shell.updateMenus();
+	]]></script>
+</program>

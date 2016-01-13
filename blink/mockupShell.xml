@@ -1,0 +1,19 @@
+<program xmlns="http://www.kinoma.com/kpr/1">
+	<require path="mockup/shell" id="MOCKUP"/>
+	<script><![CDATA[
+		shell.behavior = new MOCKUP.ShellBehavior(shell, {
+			applications: [
+				{
+					id: "blink.intlweb.com",
+					program: "./src/main",
+					title: "Blink",
+				},
+			],
+			devices: [
+				"./devices/",
+			],
+			preferences: "blink.json",
+		});
+		shell.updateMenus();
+	]]></script>
+</program>
