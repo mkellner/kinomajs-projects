@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<program xmlns="http://www.kinoma.com/kpr/1">
+	<script><![CDATA[
+	var url = mergeURI(shell.url, "./src/main");
+	var host = new Host({left:0, top:0, right:0, bottom:0}, url, "serial.intlweb.com", true);
+	shell.add(host);
+	shell.behavior = {
+		onInvoke: function(shell, message) {
+			if (message.name == "quit")
+				shell.quit(); 
+		},
+		onQuit: function(shell) {
+			host.quit();
+		},
+	};
+	host.adapt();
+	host.launch();
+	]]></script>
+</program>
